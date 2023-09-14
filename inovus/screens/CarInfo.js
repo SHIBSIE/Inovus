@@ -7,7 +7,7 @@ import Firebase from '../config/firebase';
 
 import { Octicons, Ionicons, Fontisto, MaterialIcons } from '@expo/vector-icons';
 const { primary, secondary, lightGrey } = Colors;
-import { StyledContainer, FeaturesName, TopBar, InfoText, FeaturesButtonSingle, BrandButton, BrandButtonsContainer, ButtonImage, FeaturesButton, FeaturesContainer, HomePageUserIcon, HomePageLogo, NotificationsIcon, HomePageContainer, SectionTitles, ViewOfScroll, Colors, InnerContainer, PageLogo, PageTitle, SubTitle, StyledFormArea, LeftIcon, StyledInputLabel, StyledTextInput, StyledButton, ButtonText, RightIcon, MsgBox, Line, ExtraView, ExtraText, TextLink, TextLinkContent, Gap, FeaturesImage, NamesInRow, AllCarsContainer, CarButton, CarImage, CarInfoContainer, CarInfoImage, RowElements, InfoBoxes, InfoTextTitle, VerticalLine, BiggerTitles, AdditionalInfoText, HorizontalLine } from './../components/styles';
+import { StyledContainer, FeaturesName, TopBar, InfoText, FeaturesButtonSingle, BrandButton, BrandButtonsContainer, ButtonImage, FeaturesButton, FeaturesContainer, HomePageUserIcon, HomePageLogo, NotificationsIcon, HomePageContainer, SectionTitles, ViewOfScroll, Colors, InnerContainer, PageLogo, PageTitle, SubTitle, StyledFormArea, LeftIcon, StyledInputLabel, StyledTextInput, StyledButton, ButtonText, RightIcon, MsgBox, Line, ExtraView, ExtraText, TextLink, TextLinkContent, FeaturesImage, NamesInRow, AllCarsContainer, CarButton, CarImage, CarInfoContainer, CarInfoImage, RowElements, InfoBoxes, InfoTextTitle, VerticalLine, BiggerTitles, AdditionalInfoText, HorizontalLine } from './../components/styles';
 
 import { doc, getDocs, collection } from "firebase/firestore";
 import { db } from './../config/firebase'
@@ -19,10 +19,14 @@ export default function CarInfo({ navigation }) {
     const type = route.params?.type
     const brand = route.params?.brand
     const topspeed = route.params?.topspeed
-    const engine = route.params?.engine
     const horsepower = route.params?.horsepower
     const image = route.params?.image
     const model = route.params?.model
+    const acceleration = route.params?.acceleration
+    const cylinders = route.params?.cylinders
+    const price = route.params?.price
+    const seats = route.params?.seats
+    const logo = route.params?.logo
 
 
 
@@ -42,13 +46,13 @@ export default function CarInfo({ navigation }) {
 
                 <RowElements>
                     <HomePageUserIcon>
-                        <ButtonImage source={require('./../assets/img/BMW.png')} />
+                        <ButtonImage source={{ uri: logo }} />
                     </HomePageUserIcon>
                     <SectionTitles marginTop={20} marginLeft={15}>{brand} {model}</SectionTitles>
                 </RowElements>
                 <RowElements>
                     <MaterialIcons  marginLeft ={70} name={"attach-money"} size={30} color={'#ffd700'}/>
-                    <SectionTitles>150,000</SectionTitles>
+                    <SectionTitles>{price}</SectionTitles>
                 </RowElements>
                 <CarInfoImage resizeMode='contain' source={{ uri: image }} />
                 <ScrollView showsVerticalScrollIndicator={false}>
@@ -61,13 +65,14 @@ export default function CarInfo({ navigation }) {
                         <VerticalLine/>
                         <InfoBoxes>
                             <Ionicons name={"speedometer-outline"} size={30} color={secondary}/>
-                            <InfoText>{horsepower}</InfoText>
+                            <InfoText>{acceleration}</InfoText>
                             <InfoTextTitle>Acceleration</InfoTextTitle>
+                            <InfoTextTitle>(0-100 km/h)</InfoTextTitle>
                         </InfoBoxes>
                         <VerticalLine/>
                         <InfoBoxes>
                             <MaterialIcons name={"event-seat"} size={30} color={secondary}/>
-                            <InfoText>{engine}</InfoText>
+                            <InfoText>{seats}</InfoText>
                             <InfoTextTitle>Seats</InfoTextTitle>
                         </InfoBoxes>
                     </RowElements>
@@ -78,13 +83,16 @@ export default function CarInfo({ navigation }) {
                     <HorizontalLine />
                     <RowElements> 
                         <BiggerTitles>Cylinders: </BiggerTitles>
-                        <AdditionalInfoText> {engine} </AdditionalInfoText>
+                        <AdditionalInfoText> {cylinders} </AdditionalInfoText>
                     </RowElements>
                     <HorizontalLine />
                     <RowElements> 
                         <BiggerTitles>Power: </BiggerTitles>
                         <AdditionalInfoText> {horsepower} </AdditionalInfoText>
                     </RowElements>
+                    <StyledButton welcome={true} onPress={() => navigation.navigate('Available', {carModel:model})}>
+                        <ButtonText welcome={true}>Check Availability</ButtonText>
+                    </StyledButton>
                 </ScrollView>
             </CarInfoContainer>
         </StyledContainer>

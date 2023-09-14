@@ -79,7 +79,7 @@ export default function LoginScreen({ navigation }) {
         <View style={styles.container}>
           <ExtraText style={{ padding: 10 }}>Don't have an account?</ExtraText>
           <TextLink onPress={() => navigation.navigate("Signup")}>
-            <TextLinkContent>SignUp</TextLinkContent>
+            <TextLinkContent>Sign Up</TextLinkContent>
           </TextLink>
         </View>
         </View>

@@ -25,7 +25,7 @@ const Welcome = ({navigation}) => {
             <ButtonText welcome={true}>Login</ButtonText>
           </StyledButton>
           <StyledButton welcome={true} onPress={() => navigation.navigate('Signup')}>
-            <ButtonText welcome={true}>SignUp</ButtonText>
+            <ButtonText welcome={true}>Sign Up</ButtonText>
           </StyledButton>
         </View>
       </WelcomeContainer>

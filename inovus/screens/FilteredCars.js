@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, ScrollView, Image, FlatList, ActivityIndicator, SafeAreaView } from 'react-native';
+import { useRoute } from "@react-navigation/native"
 
 import Firebase from '../config/firebase';
 
@@ -10,13 +11,15 @@ import { StyledContainer, FeaturesName, TopBar, FeaturesButtonSingle, BrandButto
 
 import { doc, getDocs, collection } from "firebase/firestore";
 import { db } from './../config/firebase';
-import filter from "lodash";
 
 export default function AllCars({ navigation }) {
 
   const [cars, setCars] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [userInput, setUserInput] = useState("");
+
+  const route = useRoute()
+  const filteredBrand = route.params?.filteredBrand
+
 
   useEffect(() => {
     setIsLoading(true);
@@ -44,22 +47,8 @@ export default function AllCars({ navigation }) {
     );
   }
 
-  const filterData = (item) => {
-    if (userInput === "") {
-      return (
-          <AllCarsContainer>
-            <CarButton onPress={() => navigation.navigate("CarInfo", { type: item.type, logo: item.logo, acceleration: item.acceleration, cylinders: item.cylinders, price: item.price, id: item.id, brand: item.brand, horsepower: item.horsepower, seats: item.seats, image: item.image, topspeed: item.topspeed, model: item.model })}>
-              <CarImage resizeMode='contain' source={{ uri: item.image }} />
-            </CarButton>
-            <TopBar>
-              <AllCarsCarName>{item.brand}: </AllCarsCarName>
-              <AllCarsCarBrand>{item.model}</AllCarsCarBrand>
-            </TopBar>
-          </AllCarsContainer>
-      )
-    }
-
-    else if (item.brand.toLowerCase().includes(userInput.toLowerCase()) || item.model.toLowerCase().includes(userInput.toLowerCase())) {
+  const filterData = (item, {filteredBrand}) => {
+    if (item.brand.toLowerCase().includes(filteredBrand)) {
       return (
           <AllCarsContainer>
             <CarButton onPress={() => navigation.navigate("CarInfo", { type: item.type, logo: item.logo, acceleration: item.acceleration, cylinders: item.cylinders, price: item.price, id: item.id, brand: item.brand, horsepower: item.horsepower, seats: item.seats, image: item.image, topspeed: item.topspeed, model: item.model })}>
@@ -99,7 +88,7 @@ export default function AllCars({ navigation }) {
       <FlatList
         showsVerticalScrollIndicator={false}
         data={cars}
-        renderItem={({ item }) => filterData(item)}
+        renderItem={({ item }) => filterData(item,{filteredBrand})}
       />
     </StyledContainer >
   )

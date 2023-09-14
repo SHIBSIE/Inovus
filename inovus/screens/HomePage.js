@@ -34,8 +34,6 @@ export default function HomePage({navigation}) {
           <Octicons name={"bell"} size={30} color={secondary} onPress={() => { }} />
         </NotificationsIcon>
       </TopBar>
-      <Gap />
-      <Gap />
       {/* <IconButton
           name='logout'
           size={24}
@@ -47,14 +45,14 @@ export default function HomePage({navigation}) {
         <ViewOfScroll>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <BrandButtonsContainer>
-              <BrandButton><ButtonImage source={require('./../assets/img/volks.png')} /></BrandButton>
-              <BrandButton><ButtonImage source={require('./../assets/img/toyota.jpg')} /></BrandButton>
-              <BrandButton><ButtonImage source={require('./../assets/img/mercedes.png')} /></BrandButton>
-              <BrandButton><ButtonImage source={require('./../assets/img/Ford.png')} /></BrandButton>
-              <BrandButton><ButtonImage source={require('./../assets/img/honda.png')} /></BrandButton>
-              <BrandButton><ButtonImage source={require('./../assets/img/BMW.png')} /></BrandButton>
-              <BrandButton><ButtonImage source={require('./../assets/img/nissan.png')} /></BrandButton>
-              <BrandButton><ButtonImage source={require('./../assets/img/hyundai.png')} /></BrandButton>
+              <BrandButton onPress={() => navigation.navigate("FilteredCars", {filteredBrand: "volkswagen"})}><ButtonImage source={require('./../assets/img/volks.png')} /></BrandButton>
+              <BrandButton onPress={() => navigation.navigate("FilteredCars", {filteredBrand: "toyota"})}><ButtonImage source={require('./../assets/img/toyota.jpg')} /></BrandButton>
+              <BrandButton onPress={() => navigation.navigate("FilteredCars", {filteredBrand: "mercedes"})}><ButtonImage source={require('./../assets/img/mercedes.png')} /></BrandButton>
+              <BrandButton onPress={() => navigation.navigate("FilteredCars", {filteredBrand: "ford"})}><ButtonImage source={require('./../assets/img/Ford.png')} /></BrandButton>
+              <BrandButton onPress={() => navigation.navigate("FilteredCars", {filteredBrand: "honda"})}><ButtonImage source={require('./../assets/img/honda.png')} /></BrandButton>
+              <BrandButton onPress={() => navigation.navigate("FilteredCars", {filteredBrand: "bmw"})}><ButtonImage source={require('./../assets/img/BMW.png')} /></BrandButton>
+              <BrandButton onPress={() => navigation.navigate("FilteredCars", {filteredBrand: "nissan"})}><ButtonImage source={require('./../assets/img/nissan.png')} /></BrandButton>
+              <BrandButton onPress={() => navigation.navigate("FilteredCars", {filteredBrand: "hyundai"})}><ButtonImage source={require('./../assets/img/hyundai.png')} /></BrandButton>
             </BrandButtonsContainer>
           </ScrollView>
         </ViewOfScroll>

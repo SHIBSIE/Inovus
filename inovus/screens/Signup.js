@@ -50,7 +50,7 @@ export default function SignupScreen({ navigation }) {
       <InnerContainer>
         <PageLogo resizeMode='cover' source={require('./../assets/img/img1.jpeg')} />
         <PageTitle>Inovus</PageTitle>
-        <SubTitle>Account Signup</SubTitle>
+        <SubTitle>Account Sign Up</SubTitle>
         <View width='90%'>
           <MyTextInput
             label="Full Name"
@@ -86,7 +86,7 @@ export default function SignupScreen({ navigation }) {
           />
           {signupError ? <ErrorMessage error={signupError} visible={true} /> : null}
           <StyledButton onPress={onHandleSignup}>
-            <ButtonText>SignUp</ButtonText>
+            <ButtonText>Sign Up</ButtonText>
           </StyledButton>
           <View style={styles.container}>
             <ExtraText style={{ padding: 10 }}>Already have an account?</ExtraText>

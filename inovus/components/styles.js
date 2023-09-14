@@ -215,6 +215,7 @@ export const HomePageLogo = styled.Image`
 export const HomePageContainer = styled.View`
     flex: 1;
     flex-direction:'column';
+    margin-top: 10px;
 `;
 
 export const NotificationsIcon = styled.TouchableOpacity`
@@ -295,8 +296,8 @@ export const LogoutLogo = styled.Image`
 
 // ALLCARS: 
 
+
 export const AllCarsContainer = styled.View`
-    flex: 1;
     width:100%;
     align-items:center;
 `;
@@ -391,4 +392,60 @@ export const AdditionalInfoText = styled.Text`
     font-size: 20px;
     margin-top: 20px;
     margin-left: 8px;
+`;
+
+export const SearchBox = styled.TextInput`
+    border : 1px;
+    margin-top:10px;
+    border-radius: 8px;
+    padding-horizontal: 20px;
+    height: 40px;
+    border-color:${"#ccc"};
+`;
+
+export const AvailableContainers = styled.View`
+    height:150px;
+    width :90%;
+    border:2px;
+    border-radius: 20px;
+    margin-top: 40px;
+`;
+
+export const AvailabilityTitles = styled.Text`
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    align-self: flex-end;
+`;
+
+export const SmallTitles = styled.Text`
+    margin-top: 10px;
+    font-size: 20px;
+`;
+
+
+export const StyledButtonBuy = styled.TouchableOpacity`
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-vertical: 20px;
+    background-color: ${primary};
+    border: 2px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 12px;
+    margin-left:25px;
+`;
+
+export const ErrorMessageContainer = styled.View`
+    margin-top: 50px;
+    align-items: center;
+`;
+
+
+export const ErrorMessageNoCar = styled.Text`
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
 `;
