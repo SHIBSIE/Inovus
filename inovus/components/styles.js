@@ -441,6 +441,7 @@ export const StyledButtonBuy = styled.TouchableOpacity`
 export const ErrorMessageContainer = styled.View`
     margin-top: 50px;
     align-items: center;
+    text-align: center;
 `;
 
 

@@ -2,6 +2,14 @@
   "expo": {
     "name": "Inovus",
     "slug": "Inovus",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app needs permission to access photos"
+        }
+      ]
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

@@ -7,6 +7,10 @@ import AllCars from '../screens/AllCars';
 import CarInfo from '../screens/CarInfo';
 import FilteredCars from '../screens/FilteredCars';
 import Available from '../screens/Available';
+import CarBooked from '../screens/CarBooked';
+import ElectricCars from '../screens/ElectricCars';
+import CarInfoElectric from '../screens/CarInfoElectric';
+import BookingInfo from '../screens/BookingInfo';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +25,10 @@ export default function HomeStack() {
       <Stack.Screen name='CarInfo' component={CarInfo} />
       <Stack.Screen name='FilteredCars' component={FilteredCars} />
       <Stack.Screen name='Available' component={Available} />
+      <Stack.Screen name='CarBooked' component={CarBooked} />
+      <Stack.Screen name='ElectricCars' component={ElectricCars} />
+      <Stack.Screen name='CarInfoElectric' component={CarInfoElectric} />
+      <Stack.Screen name='BookingInfo' component={BookingInfo} />
     </Stack.Navigator>
   );
 }

@@ -66,10 +66,10 @@ export default function Available({ navigation }) {
                 <SmallTitles>{item.location}</SmallTitles>
               </TopBar>
               <TopBar>
-                <StyledButtonBuy onPress={() => navigation.navigate('Login')}>
+                <StyledButtonBuy onPress={() => navigation.navigate('BookingInfo',{id: item.id})}>
                   <ButtonText welcome={true}>Book to Rent</ButtonText>
                 </StyledButtonBuy >
-                <StyledButtonBuy onPress={() => navigation.navigate('Login')}>
+                <StyledButtonBuy onPress={() => navigation.navigate('BookingInfo',{id: item.id})}>
                   <ButtonText welcome={true}>Book to Buy</ButtonText>
                 </StyledButtonBuy>
               </TopBar>
@@ -89,6 +89,10 @@ export default function Available({ navigation }) {
       }
     }
   };
+
+  const setAvilabilityofCar = () => {
+
+  }
 
 
   return (

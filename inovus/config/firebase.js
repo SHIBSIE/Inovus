@@ -1,7 +1,6 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth'; 
 import { getFirestore } from 'firebase/firestore';
-import Constants from 'expo-constants';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAP2mFFzEOIGN0lE5LORCoY00bwFCRug4k",
@@ -15,5 +14,4 @@ const firebaseConfig = {
 
 const Firebase = firebase.initializeApp(firebaseConfig);
 export default Firebase;
-
 export const db = getFirestore(Firebase);

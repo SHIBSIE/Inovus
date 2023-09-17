@@ -60,7 +60,7 @@ export default function HomePage({navigation}) {
         <ScrollView showsVerticalScrollIndicator={false}>
           <FeaturesContainer>
             <FeaturesButton onPress={() => navigation.navigate("AllCars")}><FeaturesImage source={require('./../assets/img/allcars.jpg')} /></FeaturesButton>
-            <FeaturesButton><FeaturesImage source={require('./../assets/img/electric.jpg')} /></FeaturesButton>
+            <FeaturesButton onPress={() => navigation.navigate("ElectricCars")}><FeaturesImage source={require('./../assets/img/electric.jpg')} /></FeaturesButton>
           </FeaturesContainer>
 
           <FeaturesContainer>
