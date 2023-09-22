@@ -9,6 +9,10 @@ import { StyledContainer, Colors, InnerContainer, PageLogo, PageTitle, SubTitle,
 
 import { Button, InputField, ErrorMessage } from '../components';
 import Firebase from '../config/firebase';
+import {firebase} from '../config/config';
+import { doc, getDocs, collection,updateDoc, addDoc } from "firebase/firestore";
+import { db } from './../config/firebase'
+import { useRoute } from "@react-navigation/native"
 
 const { primary, secondary, lightGrey } = Colors;
 
@@ -19,6 +23,7 @@ export default function SignupScreen({ navigation }) {
   const [password, setPassword] = useState('');
   const [FullName, setFullName] = useState('');
   const [signupError, setSignupError] = useState('');
+  const [likedCars, setlikedCars] = useState([]);
   const [hidePassword, setHidePassword] = useState(true);
 
 
@@ -30,7 +35,13 @@ export default function SignupScreen({ navigation }) {
     } catch (error) {
       setSignupError(error.message);
     }
-  };
+    const profileInfo = addDoc(collection(db, "Profiles"), {
+      Name: FullName,
+      Email: email,
+      liked: likedCars
+  });
+}
+
 
   return (
     <StyledContainer>
@@ -64,7 +75,7 @@ export default function SignupScreen({ navigation }) {
             placeholder="* * * * * *"
             placeholderTextColor={lightGrey}
             textContentType='password'
-            rightIcon={rightIcon}
+            rightIcon={RightIcon}
             value={password}
             onChangeText={text => setPassword(text)}
             secureTextEntry={hidePassword}

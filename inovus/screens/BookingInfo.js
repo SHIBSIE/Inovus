@@ -58,7 +58,6 @@ export default function BookingInfo({ navigation }) {
 
     if (!result.canceled) {
       setImage(result.assets[0].uri);
-      setIdProof(result.assets[0].uri);
     }
   };
 
@@ -81,6 +80,7 @@ export default function BookingInfo({ navigation }) {
       });
 
       const filename = image.substring(image.lastIndexOf('/') + 1);
+      setIdProof(filename);
       const ref = firebase.storage().ref().child(filename);
 
       await ref.put(blob);

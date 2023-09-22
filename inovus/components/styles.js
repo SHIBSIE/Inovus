@@ -61,6 +61,9 @@ export const PageTitle = styled.Text`
     ${(props) => props.welcome && `
         font-size: 35px;
     `}
+    ${(props) => props.compare && `
+        padding: 10px;
+    `}
 `;
 
 export const SubTitle = styled.Text`
@@ -136,6 +139,25 @@ export const StyledButton = styled.TouchableOpacity`
         height: 50px;
         border-radius: 10px;
         padding: 12px;
+    `}
+    ${(props) => props.likeButton == true &&`
+        background-color: ${primary};
+        border: 2px;
+        height: 70px;
+        margin-up: 15px;
+        border-radius: 10px;
+        padding: 12px;
+        margin-bottom: 5px;
+    `}
+
+    ${(props) => props.liked == true &&`
+        background-color: ${"#1e90ff"};
+        border: 2px;
+        height: 70px;
+        margin-up: 15px;
+        border-radius: 10px;
+        padding: 12px;
+        margin-bottom: 5px;
     `}
 `;
 

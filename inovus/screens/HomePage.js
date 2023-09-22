@@ -15,13 +15,6 @@ const auth = Firebase.auth();
 
 export default function HomePage({navigation}) {
   const { user } = useContext(AuthenticatedUserContext);
-  // const handleSignOut = async () => {
-  //   try {
-  //     await auth.signOut();
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
   return (
     <StyledContainer>
       <StatusBar style="dark" />
@@ -34,12 +27,6 @@ export default function HomePage({navigation}) {
           <Octicons name={"bell"} size={30} color={secondary} onPress={() => { }} />
         </NotificationsIcon>
       </TopBar>
-      {/* <IconButton
-          name='logout'
-          size={24}
-          color='#fff'
-          onPress={handleSignOut}
-        /> */}
       <HomePageContainer>
         <SectionTitles>Popular Brands</SectionTitles>
         <ViewOfScroll>
@@ -69,7 +56,7 @@ export default function HomePage({navigation}) {
           </FeaturesContainer>
 
           <FeaturesContainer>
-            <FeaturesButton><FeaturesImage source={require('./../assets/img/compare.jpg')} /></FeaturesButton>
+            <FeaturesButton onPress={() => navigation.navigate("Compare")}><FeaturesImage source={require('./../assets/img/compare.jpg')} /></FeaturesButton>
             <FeaturesButton><FeaturesImage source={require('./../assets/img/survey.jpg')} /></FeaturesButton>
           </FeaturesContainer>
 
@@ -79,7 +66,7 @@ export default function HomePage({navigation}) {
           </FeaturesContainer>
 
           <FeaturesContainer>
-            <FeaturesButtonSingle><FeaturesImage /></FeaturesButtonSingle>
+            <FeaturesButtonSingle onPress={() => navigation.navigate("Recommendation")}><FeaturesImage /></FeaturesButtonSingle>
           </FeaturesContainer>
         </ScrollView>
       </HomePageContainer>
