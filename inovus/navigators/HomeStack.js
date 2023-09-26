@@ -12,7 +12,11 @@ import ElectricCars from '../screens/ElectricCars';
 import CarInfoElectric from '../screens/CarInfoElectric';
 import BookingInfo from '../screens/BookingInfo';
 import Recommendation from '../screens/Recommendation';
-import Compare from '../screens/Compare';
+import CompareChooseCar from '../screens/CompareChooseCar';
+import Comparison from '../screens/Comparison';
+import CompareChooseCar2 from '../screens/CompareChooseCar2';
+import ComparingBoth from '../screens/ComparingBoth';
+
 
 const Stack = createStackNavigator();
 
@@ -32,7 +36,10 @@ export default function HomeStack() {
       <Stack.Screen name='CarInfoElectric' component={CarInfoElectric} />
       <Stack.Screen name='BookingInfo' component={BookingInfo} />
       <Stack.Screen name='Recommendation' component={Recommendation} />
-      <Stack.Screen name='Compare' component={Compare} />
+      <Stack.Screen name='CompareChooseCar' component={CompareChooseCar} />
+      <Stack.Screen name='CompareChooseCar2' component={CompareChooseCar2} />
+      <Stack.Screen name='Comparison' component={Comparison} />
+      <Stack.Screen name='ComparingBoth' component={ComparingBoth} />
     </Stack.Navigator>
   );
 }

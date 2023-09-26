@@ -349,6 +349,10 @@ export const CarImage = styled.Image`
     height: 300px;
     width: 230px;
     resize-mode: contain;
+
+    ${(props) => props.comparison == true &&`
+        height: 250px;
+    `}
 `;
 
 
@@ -394,6 +398,11 @@ export const VerticalLine = styled.View`
     background-color: ${'#e6e6fa'};
     margin-left: 20px;
     margin-right: 20px;
+
+    ${(props) => props.AllCars == true &&`
+        margin-top: 10px;
+        height: 50px;
+    `}
 `;
 
 export const BiggerTitles = styled.Text`
@@ -401,6 +410,10 @@ export const BiggerTitles = styled.Text`
     color: ${"#a9a9a9"};
     font-size:20px;
     margin-top: 20px;
+
+    ${(props) => props.compare && `
+        font-size:10px;
+    `}
 `;
 
 export const HorizontalLine = styled.View`
@@ -408,12 +421,18 @@ export const HorizontalLine = styled.View`
     width: 90%;
     background-color: ${'#e6e6fa'};
     margin-top: 15px;
+    ${(props) => props.compare && `
+        margin-top: 5px;
+    `}
 `;
 
 export const AdditionalInfoText = styled.Text`
     font-size: 20px;
     margin-top: 20px;
     margin-left: 8px;
+    ${(props) => props.compare && `
+        font-size: 10px;
+    `}
 `;
 
 export const SearchBox = styled.TextInput`
@@ -471,4 +490,42 @@ export const ErrorMessageNoCar = styled.Text`
     align-items: center;
     font-size: 20px;
     font-weight: bold;
+`;
+
+export const ComparisonContainer = styled.View`
+    padding: 25px;
+    padding-top: 10px;
+    justify-content: center;
+`;
+
+export const ComparisonSlot = styled.TouchableOpacity`
+    border : 2px;
+    height: 300px;
+    width: 250px;
+    margin-left: 20px;
+    margin-vertical: 25px;
+    border-radius: 20px;
+`;
+
+export const ComparisonTitle = styled.Text`
+    font-weight:bold;
+    font-size: 23px;
+    margin-top: 10px;
+    text-align:center;
+
+    ${(props) => props.unavailable == true &&`
+        margin-top: 60px;
+        font-size: 20px;
+    `}
+`;
+
+export const TextButtonText = styled.Text`
+    font-weight: bold;
+    color: ${"#a9a9a9"};
+    font-size:20px;
+    margin-top: 20px;
+`;
+
+export const TextButton = styled.TouchableOpacity`
+
 `;

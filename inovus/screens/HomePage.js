@@ -56,17 +56,21 @@ export default function HomePage({navigation}) {
           </FeaturesContainer>
 
           <FeaturesContainer>
-            <FeaturesButton onPress={() => navigation.navigate("Compare")}><FeaturesImage source={require('./../assets/img/compare.jpg')} /></FeaturesButton>
+            <FeaturesButton onPress={() => navigation.navigate("CompareChooseCar")}><FeaturesImage source={require('./../assets/img/compare.jpg')} /></FeaturesButton>
             <FeaturesButton><FeaturesImage source={require('./../assets/img/survey.jpg')} /></FeaturesButton>
           </FeaturesContainer>
 
           <FeaturesContainer>
-            <FeaturesName marginLeft ={48}>Compare</FeaturesName>
-            <FeaturesName marginLeft = {72}>Survey</FeaturesName>
+            <FeaturesName marginLeft ={44}>Compare</FeaturesName>
+            <FeaturesName marginLeft = {78}>Survey</FeaturesName>
           </FeaturesContainer>
 
           <FeaturesContainer>
-            <FeaturesButtonSingle onPress={() => navigation.navigate("Recommendation")}><FeaturesImage /></FeaturesButtonSingle>
+            <FeaturesButtonSingle onPress={() => navigation.navigate("Recommendation")}><FeaturesImage source={require('./../assets/img/recommended.jpg')}/></FeaturesButtonSingle>
+          </FeaturesContainer>
+
+          <FeaturesContainer>
+            <FeaturesName marginLeft={80}>Recommended Cars</FeaturesName>
           </FeaturesContainer>
         </ScrollView>
       </HomePageContainer>

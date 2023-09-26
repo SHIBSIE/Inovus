@@ -12,8 +12,6 @@ import { StyledContainer, FeaturesName, TopBar, InfoText, FeaturesButtonSingle, 
 
 import { doc, getDocs, collection, updateDoc, setDoc } from "firebase/firestore";
 import { db } from './../config/firebase'
-import { liked } from 'raccoon/lib/input';
-import { set } from 'lodash';
 
 export default function CarInfo({ navigation }) {
 
