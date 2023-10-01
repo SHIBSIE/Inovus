@@ -23,9 +23,6 @@ export default function HomePage({navigation}) {
           <Octicons name={"person"} size={30} color={secondary} onPress={() => navigation.navigate("Logout")} />
         </HomePageUserIcon>
         <HomePageLogo resizeMode='contain' source={require('./../assets/img/img1.jpeg')} />
-        <NotificationsIcon>
-          <Octicons name={"bell"} size={30} color={secondary} onPress={() => { }} />
-        </NotificationsIcon>
       </TopBar>
       <HomePageContainer>
         <SectionTitles>Popular Brands</SectionTitles>
@@ -57,7 +54,7 @@ export default function HomePage({navigation}) {
 
           <FeaturesContainer>
             <FeaturesButton onPress={() => navigation.navigate("CompareChooseCar")}><FeaturesImage source={require('./../assets/img/compare.jpg')} /></FeaturesButton>
-            <FeaturesButton><FeaturesImage source={require('./../assets/img/survey.jpg')} /></FeaturesButton>
+            <FeaturesButton onPress={() => navigation.navigate("Survey")}><FeaturesImage source={require('./../assets/img/survey.jpg')} /></FeaturesButton>
           </FeaturesContainer>
 
           <FeaturesContainer>

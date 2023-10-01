@@ -34,9 +34,6 @@ export default function Comparison({ navigation }) {
           <Octicons name={"person"} size={30} color={secondary} onPress={() => navigation.navigate("Logout")} />
         </HomePageUserIcon>
         <HomePageLogo resizeMode='contain' source={require('./../assets/img/img1.jpeg')} />
-        <NotificationsIcon>
-          <Octicons name={"bell"} size={30} color={secondary} onPress={() => { }} />
-        </NotificationsIcon>
       </TopBar>
       <ComparisonContainer>
         <ComparisonSlot  onPress={() => navigation.navigate("CompareChooseCar")}>

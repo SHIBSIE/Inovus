@@ -41,9 +41,6 @@ export default function CarBooked({ navigation }) {
           <Octicons name={"person"} size={30} color={secondary} onPress={() => navigation.navigate("Logout")} />
         </HomePageUserIcon>
         <HomePageLogo resizeMode='contain' source={require('./../assets/img/img1.jpeg')} />
-        <NotificationsIcon>
-          <Octicons name={"bell"} size={30} color={secondary} onPress={() => { }} />
-        </NotificationsIcon>
       </TopBar>
       <ErrorMessageContainer>
         <ErrorMessageNoCar>The car has been booked.</ErrorMessageNoCar>

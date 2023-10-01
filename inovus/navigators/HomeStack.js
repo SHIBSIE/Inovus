@@ -16,6 +16,7 @@ import CompareChooseCar from '../screens/CompareChooseCar';
 import Comparison from '../screens/Comparison';
 import CompareChooseCar2 from '../screens/CompareChooseCar2';
 import ComparingBoth from '../screens/ComparingBoth';
+import Survey from '../screens/Survey';
 
 
 const Stack = createStackNavigator();
@@ -40,6 +41,7 @@ export default function HomeStack() {
       <Stack.Screen name='CompareChooseCar2' component={CompareChooseCar2} />
       <Stack.Screen name='Comparison' component={Comparison} />
       <Stack.Screen name='ComparingBoth' component={ComparingBoth} />
+      <Stack.Screen name='Survey' component={Survey} />
     </Stack.Navigator>
   );
 }

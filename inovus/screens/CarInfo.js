@@ -35,6 +35,7 @@ export default function CarInfo({ navigation }) {
     const model = route.params?.model
     const acceleration = route.params?.acceleration
     const cylinders = route.params?.cylinders
+    const id = route.params?.id
     const price = route.params?.price
     const seats = route.params?.seats
     const logo = route.params?.logo
@@ -123,9 +124,6 @@ export default function CarInfo({ navigation }) {
                     <Octicons name={"person"} size={30} color={secondary} onPress={() => navigation.navigate("Logout")} />
                 </HomePageUserIcon>
                 <HomePageLogo resizeMode='contain' source={require('./../assets/img/img1.jpeg')} />
-                <NotificationsIcon>
-                    <Octicons name={"bell"} size={30} color={secondary} onPress={() => { }} />
-                </NotificationsIcon>
             </TopBar>
             <CarInfoContainer>
                 <RowElements>
@@ -174,7 +172,7 @@ export default function CarInfo({ navigation }) {
                         <BiggerTitles>Power: </BiggerTitles>
                         <AdditionalInfoText> {horsepower} </AdditionalInfoText>
                     </RowElements>
-                    <StyledButton likeButton={true} liked={ButtonLiked} onPress={() => onHandleLike(likedCars, size, { cylinders }, {seats})}>
+                    <StyledButton likeButton={true} liked={ButtonLiked} onPress={() => onHandleLike(likedCars, size, { cylinders }, {seats}, {id}, {email})}>
                         <Octicons name={"thumbsup"} size={30} color={secondary} />
                     </StyledButton>
                     <StyledButton welcome={true} onPress={() => navigation.navigate('Available', { carModel: model })}>

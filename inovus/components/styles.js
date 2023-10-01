@@ -33,6 +33,12 @@ export const WelcomeContainer = styled(InnerContainer)`
 export const PageLogo = styled.Image`
     width: 320px;
     height: 140px;
+
+    ${(props) => props.survey && `
+        height: 250px;
+        width: 205px;
+        margin-left: 40px;
+    `}
 `;
 
 export const Avatar = styled.Image`
@@ -230,7 +236,7 @@ export const HomePageUserIcon = styled.TouchableOpacity`
 export const HomePageLogo = styled.Image`
     height: 40px;
     width: 100px;
-    margin-left:160px;
+    margin-left:200px;
     margin-right: 20px;
 `;
 
@@ -248,6 +254,9 @@ export const SectionTitles = styled.Text`
     font-size: 23px;
     color: ${secondary};
     font-weight: bold;
+    ${(props) => props.survey == true &&`
+        margin-top: 10px;
+    `}
 `;
 
 export const ViewOfScroll = styled.View`
@@ -528,4 +537,23 @@ export const TextButtonText = styled.Text`
 
 export const TextButton = styled.TouchableOpacity`
 
+`;
+
+export const SurveyContainer = styled.View`
+    margin-top: 20px;
+    flex: 1;
+    width:100%;
+`;
+
+export const SurveyTitle = styled.Text`
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 40px;
+    font-size: 20px;
+    margin-bottom: 10px;
+`;
+
+export const QuestionText = styled.Text`
+    font-weight: bold;
+    font-size: 15px;
 `;

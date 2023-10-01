@@ -24,7 +24,10 @@ export default function SignupScreen({ navigation }) {
   const [FullName, setFullName] = useState('');
   const [signupError, setSignupError] = useState('');
   const [likedCars, setlikedCars] = useState([]);
+  const [sizeCars, setSizeCars] = useState([]);
+  const [surveyCars, setSurveyCars] = useState([]);
   const [hidePassword, setHidePassword] = useState(true);
+  const [surveyFilledCars, setSurveyFilledCars] = useState(false);
 
 
   const onHandleSignup = async () => {
@@ -38,7 +41,10 @@ export default function SignupScreen({ navigation }) {
     const profileInfo = addDoc(collection(db, "Profiles"), {
       Name: FullName,
       Email: email,
-      liked: likedCars
+      liked: likedCars,
+      size: sizeCars,
+      surveyFilled: surveyFilledCars,
+      survey: surveyCars
   });
 }
 

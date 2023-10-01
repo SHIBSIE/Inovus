@@ -89,9 +89,6 @@ export default function CompareChooseCar({ navigation }) {
           <Octicons name={"person"} size={30} color={secondary} onPress={() => navigation.navigate("Logout")} />
         </HomePageUserIcon>
         <HomePageLogo resizeMode='contain' source={require('./../assets/img/img1.jpeg')} />
-        <NotificationsIcon>
-          <Octicons name={"bell"} size={30} color={secondary} onPress={() => { }} />
-        </NotificationsIcon>
       </TopBar>
       <PageTitle compare={true}> Pick a Car to Compare </PageTitle>
       <SearchBox

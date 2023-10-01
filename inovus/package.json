@@ -19,7 +19,9 @@
     "@react-native-firebase/storage": "^18.3.2",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/stack": "^6.3.17",
+    "assert": "^2.1.0",
     "dotenv": "^16.3.1",
+    "events": "^3.3.0",
     "expo": "~49.0.8",
     "expo-constants": "~14.4.2",
     "expo-file-system": "~15.4.4",
@@ -27,14 +29,19 @@
     "expo-status-bar": "~1.6.0",
     "firebase": "^10.4.0",
     "lodash": "^4.17.21",
+    "net": "^1.0.2",
     "raccoon": "^0.2.8",
     "react": "18.2.0",
-    "react-native": "0.72.4",
+    "react-native": "0.72.5",
     "react-native-elements": "^3.4.3",
     "react-native-firebase": "^5.6.0",
     "react-native-image-crop-picker": "^0.40.0",
-    "redis": "^4.6.8",
-    "styled-components": "^6.0.7"
+    "react-native-radio-buttons-group": "^3.0.5",
+    "redis": "^4.6.10",
+    "styled-components": "^6.0.7",
+    "tls": "^0.0.1",
+    "url": "^0.11.3",
+    "util": "^0.12.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
