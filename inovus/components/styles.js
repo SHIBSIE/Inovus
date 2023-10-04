@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 
 const StatusBarHeight = Constants.statusBarHeight;
@@ -10,7 +10,7 @@ export const Colors = {
     lightGrey: "#d3d3d3",
 };
 
-const {primary,secondary} = Colors;
+const { primary, secondary } = Colors;
 
 export const StyledContainer = styled.View`
     flex: 1;
@@ -22,6 +22,12 @@ export const InnerContainer = styled.View`
     flex: 1;
     width:100%;
     align-items:center;
+`;
+
+export const ContactUsContainer = styled.View`
+    flex: 1;
+    width:100%;
+    flex-direction:row;
 `;
 
 export const WelcomeContainer = styled(InnerContainer)`
@@ -133,20 +139,20 @@ export const StyledButton = styled.TouchableOpacity`
     margin-vertical: 20px;
     height: 60px;
 
-    ${(props) => props.google == true &&`
+    ${(props) => props.google == true && `
         background-color: ${`#008000`};
         flex-direction: row;
         justify-content: center;
     `}
 
-    ${(props) => props.welcome == true &&`
+    ${(props) => props.welcome == true && `
         background-color: ${primary};
         border: 2px;
         height: 50px;
         border-radius: 10px;
         padding: 12px;
     `}
-    ${(props) => props.likeButton == true &&`
+    ${(props) => props.likeButton == true && `
         background-color: ${primary};
         border: 2px;
         height: 70px;
@@ -156,7 +162,7 @@ export const StyledButton = styled.TouchableOpacity`
         margin-bottom: 5px;
     `}
 
-    ${(props) => props.liked == true &&`
+    ${(props) => props.liked == true && `
         background-color: ${"#1e90ff"};
         border: 2px;
         height: 70px;
@@ -171,11 +177,11 @@ export const ButtonText = styled.Text`
     color: ${primary};
     font-size:20px;
     
-    ${(props) => props.google == true &&`
+    ${(props) => props.google == true && `
         margin-horizontal: 25px;
     `}
 
-    ${(props) => props.welcome == true &&`
+    ${(props) => props.welcome == true && `
         color: ${secondary};
         font-size:15px;
     `}
@@ -254,8 +260,14 @@ export const SectionTitles = styled.Text`
     font-size: 23px;
     color: ${secondary};
     font-weight: bold;
-    ${(props) => props.survey == true &&`
+
+    ${(props) => props.survey == true && `
         margin-top: 10px;
+    `}
+
+    ${(props) => props.contact == true && `
+        text-decoration-line: Underline;
+        margin-bottom: 30px;
     `}
 `;
 
@@ -317,6 +329,15 @@ export const FeaturesName = styled.Text`
     margin-left: 55px;
     margin-top: 10px;
     margin-right: 10px;
+
+    ${(props) => props.recommended == true && `
+        font-size: 18px;
+        margin-left: 0px;
+    `}
+
+    ${(props) => props.contact == true && `
+        margin-left: 16px;
+    `}
 `;
 
 export const LogoutLogo = styled.Image`
@@ -359,7 +380,7 @@ export const CarImage = styled.Image`
     width: 230px;
     resize-mode: contain;
 
-    ${(props) => props.comparison == true &&`
+    ${(props) => props.comparison == true && `
         height: 250px;
     `}
 `;
@@ -408,7 +429,7 @@ export const VerticalLine = styled.View`
     margin-left: 20px;
     margin-right: 20px;
 
-    ${(props) => props.AllCars == true &&`
+    ${(props) => props.AllCars == true && `
         margin-top: 10px;
         height: 50px;
     `}
@@ -522,7 +543,7 @@ export const ComparisonTitle = styled.Text`
     margin-top: 10px;
     text-align:center;
 
-    ${(props) => props.unavailable == true &&`
+    ${(props) => props.unavailable == true && `
         margin-top: 60px;
         font-size: 20px;
     `}

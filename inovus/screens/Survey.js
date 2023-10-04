@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useContext, useState, useMemo,useEffect } from 'react';
-import { Linking, ScrollView, View, Text,ActivityIndicator } from 'react-native';
+import React, { useContext, useState, useMemo, useEffect } from 'react';
+import { Linking, ScrollView, View, Text, ActivityIndicator } from 'react-native';
 
 import { IconButton } from '../components';
 import Firebase from '../config/firebase';
@@ -9,7 +9,7 @@ import RadioGroup from 'react-native-radio-buttons-group';
 
 import { Octicons, Ionicons, Fontisto } from '@expo/vector-icons';
 const { primary, secondary, lightGrey } = Colors;
-import { StyledContainer, InfoText, FeaturesName, TopBar, FeaturesButtonSingle, BrandButton, BrandButtonsContainer, ButtonImage, FeaturesButton, FeaturesContainer, HomePageUserIcon, HomePageLogo, NotificationsIcon, HomePageContainer, SectionTitles, ViewOfScroll, Colors, InnerContainer, PageLogo, PageTitle, SubTitle, StyledFormArea, LeftIcon, StyledInputLabel, StyledTextInput, StyledButton, ButtonText, RightIcon, MsgBox, Line, ExtraView, ExtraText, TextLink, TextLinkContent, Gap, FeaturesImage, NamesInRow, InfoTextTitle, FeedbackBox, SurveyContainer, QuestionText, SurveyTitle } from '../components/styles';
+import { StyledContainer, InfoText, TextButton, TextButtonText, RowElements, VerticalLine, FeaturesName, TopBar, FeaturesButtonSingle, BrandButton, BrandButtonsContainer, ButtonImage, FeaturesButton, FeaturesContainer, HomePageUserIcon, HomePageLogo, NotificationsIcon, HomePageContainer, SectionTitles, ViewOfScroll, Colors, InnerContainer, PageLogo, PageTitle, SubTitle, StyledFormArea, LeftIcon, StyledInputLabel, StyledTextInput, StyledButton, ButtonText, RightIcon, MsgBox, Line, ExtraView, ExtraText, TextLink, TextLinkContent, Gap, FeaturesImage, NamesInRow, InfoTextTitle, FeedbackBox, SurveyContainer, QuestionText, SurveyTitle } from '../components/styles';
 
 import { doc, getDocs, collection, updateDoc, setDoc } from "firebase/firestore";
 import { db } from './../config/firebase'
@@ -89,7 +89,7 @@ export default function Survey({ navigation }) {
             const userProfile = doc(db, "Profiles", userID)
             updateDoc(userProfile, {
                 survey: newSurveyResult,
-                surveyFilled : true
+                surveyFilled: true
             }).catch(error => {
                 console.log(error.message)
             })
@@ -98,7 +98,7 @@ export default function Survey({ navigation }) {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch({email});
+        fetch({ email });
     }, [])
 
     if (isLoading) {
@@ -109,7 +109,7 @@ export default function Survey({ navigation }) {
         );
     }
 
-    async function fetch( {email} ) {
+    async function fetch({ email }) {
         getDocs(collection(db, "Profiles")).then(docSnap => {
             let profiles = [];
             docSnap.forEach((doc) => {
@@ -134,12 +134,9 @@ export default function Survey({ navigation }) {
                 <HomePageLogo resizeMode='contain' source={require('./../assets/img/img1.jpeg')} />
             </TopBar>
             <PageLogo survey={true} resizeMode='cover' source={require('./../assets/feedback.png')} />
-            <SectionTitles survey={true}> Give us feedback! </SectionTitles>
+            <SectionTitles survey={true}> Tell us your preferences! </SectionTitles>
             <InfoText>Your input shapes our future!</InfoText>
             <InfoText>Please share your thoughts with us.</InfoText>
-            {/* <StyledButton onPress={() => Linking.openURL('https://forms.office.com/Pages/ResponsePage.aspx?id=Glu6x7ZB6UOhIG_2VK2hNwlgg3UFAkFIm-voHfmUcS5UMjg2VE9HN1Q0Mlk4MzBTTkY0MTEyV1hXNC4u')}>
-                <ButtonText>Go to survey!</ButtonText>
-            </StyledButton> */}
             <SurveyContainer>
                 <QuestionText> Preferred number of car seats: </QuestionText>
                 <RadioGroup

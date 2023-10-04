@@ -63,11 +63,13 @@ export default function HomePage({navigation}) {
           </FeaturesContainer>
 
           <FeaturesContainer>
-            <FeaturesButtonSingle onPress={() => navigation.navigate("Recommendation")}><FeaturesImage source={require('./../assets/img/recommended.jpg')}/></FeaturesButtonSingle>
+            <FeaturesButton onPress={() => navigation.navigate("Recommendation")}><FeaturesImage source={require('./../assets/img/recommended.jpg')}/></FeaturesButton>
+            <FeaturesButton onPress={() => navigation.navigate("ContactUs")}><FeaturesImage source={require('./../assets/contact.png')}/></FeaturesButton>
           </FeaturesContainer>
 
           <FeaturesContainer>
-            <FeaturesName marginLeft={80}>Recommended Cars</FeaturesName>
+            <FeaturesName recommended = {true}>Recommended Cars</FeaturesName>
+            <FeaturesName contact = {true}>Contact us</FeaturesName>
           </FeaturesContainer>
         </ScrollView>
       </HomePageContainer>

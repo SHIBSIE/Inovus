@@ -50,7 +50,7 @@ export default function Available({ navigation }) {
   let length = availableCars.length;
 
   const filterData = (item, { carModel }) => {
-    while (i<length) {
+    while (i<=length) {
       if (item.model.includes(carModel) && item.status == "available") {
         setIsEmpty(false);
         return (
@@ -59,7 +59,6 @@ export default function Available({ navigation }) {
               <TopBar>
                 <AvailabilityTitles>Name: </AvailabilityTitles>
                 <SmallTitles>{item.name}</SmallTitles>
-                <AvailabilityTitles> {item.condition} </AvailabilityTitles>
               </TopBar>
               <TopBar>
                 <AvailabilityTitles>Location: </AvailabilityTitles>
